@@ -165,7 +165,7 @@ public class SerializationExercises {
     public static class Exercise3 {
 
         public static void main(String[] args) {
-
+/*
             Movie movie1 = new Movie("Titanic");
             Theater theater1 = new Theater("Yelmo Cines Las Arenas");
             Session session1 = new Session(movie1, theater1);
@@ -187,6 +187,62 @@ public class SerializationExercises {
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
+
+ */
+            Movie movie1 = new Movie("Titanic");
+            Theater theater1 = new Theater("Yelmo Cines Las Arenas");
+            Session session1 = new Session(movie1, theater1);
+
+            Movie movie2 = new Movie("Frozen2");
+            Theater theater2 = new Theater("Yelmo Cines Los Alisios");
+            Session session2 = new Session(movie2, theater2);
+
+            String[] filename2 = {"movie1OBJ.txt", "movie2OBJ.txt", "theater1OBJ.txt", "theater2OBJ.txt", "session1OBJ.txt", "session2OBJ.txt"};
+
+            Movie deserializedMovie1 = null;
+            Movie deserializedMovie2 = null;
+            Theater deserializedTheater1 = null;
+            Theater deserializedTheater2 = null;
+            Session deserializedSession1= null;
+            Session deserializedSession2 = null;
+            Object[] objects = {deserializedMovie1, deserializedMovie2, deserializedTheater1, deserializedTheater2, deserializedSession1, deserializedSession2};
+
+
+
+            for (int i = 0; i < filename2.length; i++){
+
+            try {
+                // Create an ObjectInputStream to read from the binary file
+                FileInputStream fileInputStream = new FileInputStream(filename2[i]);
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+
+                // Deserialize the Movie object
+
+                if (i == 0 || i == 1) {
+                    objects[i] = (Movie) objectInputStream.readObject();
+                } else if (i == 2 || i == 3) {
+                    objects[i] = (Theater) objectInputStream.readObject();}
+                else {
+                    objects[i] = (Session) objectInputStream.readObject();
+                }
+
+
+
+                // Close the ObjectInputStream
+                objectInputStream.close();
+
+                // Now you can work with the deserialized Movie object
+                System.out.println("Deserialized object" + (i + 1) +  ": " + objects[i]);
+
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                }
+            }
+
+
+
+
+
 
 
 
