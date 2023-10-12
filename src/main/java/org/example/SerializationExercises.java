@@ -165,30 +165,7 @@ public class SerializationExercises {
     public static class Exercise3 {
 
         public static void main(String[] args) {
-/*
-            Movie movie1 = new Movie("Titanic");
-            Theater theater1 = new Theater("Yelmo Cines Las Arenas");
-            Session session1 = new Session(movie1, theater1);
 
-            try {
-                // Create an ObjectInputStream to read from the binary file
-                FileInputStream fileInputStream = new FileInputStream("probandoObjOutStr.txt");
-                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-
-                // Deserialize the Movie object
-                Movie deserializedMovie = (Movie) objectInputStream.readObject();
-
-                // Close the ObjectInputStream
-                objectInputStream.close();
-
-                // Now you can work with the deserialized Movie object
-                System.out.println("Deserialized Movie name: " + deserializedMovie.getName());
-
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-
- */
             Movie movie1 = new Movie("Titanic");
             Theater theater1 = new Theater("Yelmo Cines Las Arenas");
             Session session1 = new Session(movie1, theater1);
