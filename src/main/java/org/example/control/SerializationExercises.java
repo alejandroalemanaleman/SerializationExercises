@@ -1,14 +1,11 @@
-package org.example;
+package org.example.control;
 import com.google.gson.Gson;
-import com.google.gson.internal.bind.util.ISO8601Utils;
-import java.io.Serializable;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.JsonMappingException;
+import org.example.model.Movie;
+import org.example.model.Session;
+import org.example.model.Theater;
 
 public class SerializationExercises {
     /*

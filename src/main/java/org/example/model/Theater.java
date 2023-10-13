@@ -1,11 +1,9 @@
-package org.example;
+package org.example.model;
 import java.io.Serializable;
 
-
-public class Movie implements Serializable {
+public class Theater implements Serializable {
     private String name;
-
-    public Movie(String name){
+    public Theater(String name){
         this.name = name;
     }
 
@@ -18,3 +16,4 @@ public class Movie implements Serializable {
     }
 
 }
+
